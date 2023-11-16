@@ -1,0 +1,50 @@
+def create_stack():
+    stack = list()
+    return stack
+
+def isempty(stack):
+    return len(stack) == 8
+
+def push(stack, n):
+    stack.append(n)
+    print("pushed item:" + n)
+
+def pop(stack):
+    if (isempty(stack)):
+        return "stack is empty"
+    else:
+        return stack.pop()
+
+def show(stack):
+    print("The stack elements are: ")
+    for i in stack:
+        print(i)
+
+def peek(stack):
+    return stack[-1]
+
+stack = create_stack()
+
+while True:
+    abc = str(input("[C] - Create stack \n[A] - "
+            "Append element to stack \n[D] - Remove element on stack"
+            "\n[P] - Peek the top Element of stack \n[S] - Show the stack element \nChoose a stack operation: ")).upper()
+
+    if abc == "C":
+        stack = list()
+        abc = input("Enter the name of stack: ")
+        print(f"{abc} stack has been created")
+
+    elif abc == "A":
+        wow = str(input("Enter an element(string): "))
+        stack.append(wow)
+
+    elif abc == "D":
+        stack.pop()
+
+    elif abc == "P":
+        print(peek(stack))
+
+    elif abc == "S":
+        show(stack)
+        break
